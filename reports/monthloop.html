@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" charset="utf-8"/>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawNov);
+
+    function drawNov() {
+      var novData = $.ajax({
+          url: "http://192.168.223.58:5555/BlNov",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(novData);
+
+      var options = {
+                  title: 'Tickets For November',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_nov'));
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+     // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawWeek);
+
+    function drawWeek() {
+      var weekData = $.ajax({
+          url: "http://192.168.223.58:5555/BlCatNov",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(weekData);
+
+      var options = {
+                  title: 'November Loop Categories',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('nov_bl_cat'));
+      chart.draw(data, options);
+    }
+  </script>
+
+    <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawOct);
+
+    function drawOct() {
+      var octData = $.ajax({
+          url: "http://192.168.223.58:5555/BlOct",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(octData);
+
+      var options = {
+                  title: 'Tickets For October',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_oct'));
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawWeek);
+
+    function drawWeek() {
+      var weekData = $.ajax({
+          url: "http://192.168.223.58:5555/BlCatOct",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(weekData);
+
+      var options = {
+                  title: 'October Loop Categories',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('oct_bl_cat'));
+      chart.draw(data, options);
+    }
+  </script>
+
+   <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawSep);
+
+    function drawSep() {
+      var sepData = $.ajax({
+          url: "http://192.168.223.58:5555/BlSep",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(sepData);
+
+      var options = {
+                  title: 'Tickets For September',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_sep'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawWeek);
+
+    function drawWeek() {
+      var weekData = $.ajax({
+          url: "http://192.168.223.58:5555/BlCatSep",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(weekData);
+
+      var options = {
+                  title: 'September Loop Categories',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('sep_bl_cat'));
+      chart.draw(data, options);
+    }
+  </script>
+
+   <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawAug);
+
+    function drawAug() {
+      var augData = $.ajax({
+          url: "http://192.168.223.58:5555/BlAug",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(augData);
+
+      var options = {
+                  title: 'Tickets For August',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_aug'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawWeek);
+
+    function drawWeek() {
+      var weekData = $.ajax({
+          url: "http://192.168.223.58:5555/BlCatAug",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(weekData);
+
+      var options = {
+                  title: 'August Loop Categories',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('aug_bl_cat'));
+      chart.draw(data, options);
+    }
+  </script>
+
+   <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawJuly);
+
+    function drawJuly() {
+      var julyData = $.ajax({
+          url: "http://192.168.223.58:5555/BlJuly",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(julyData);
+
+      var options = {
+                  title: 'Tickets For July',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_july'));
+      chart.draw(data, options);
+    }
+  </script>
+
+   <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawWeek);
+
+    function drawWeek() {
+      var weekData = $.ajax({
+          url: "http://192.168.223.58:5555/BlCatJuly",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(weekData);
+
+      var options = {
+                  title: 'July Loop Categories',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('july_bl_cat'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawJune);
+
+    function drawJune() {
+      var juneData = $.ajax({
+          url: "http://192.168.223.58:5555/BlJune",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(juneData);
+
+      var options = {
+                  title: 'Tickets For June',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_june'));
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawMay);
+      
+    function drawMay() {
+      var mayData = $.ajax({
+          url: "http://192.168.223.58:5555/BlMay",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(mayData);
+
+      var options = {
+                  title: 'Tickets For May',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_may'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawApr);
+      
+    function drawApr() {
+      var aprData = $.ajax({
+          url: "http://192.168.223.58:5555/BlApr",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(aprData);
+
+      var options = {
+                  title: 'Tickets For April',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_apr'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawMar);
+      
+    function drawMar() {
+      var marData = $.ajax({
+          url: "http://192.168.223.58:5555/BlMar",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(marData);
+
+      var options = {
+                  title: 'Tickets For March',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_mar'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawFeb);
+      
+    function drawFeb() {
+      var febData = $.ajax({
+          url: "http://192.168.223.58:5555/BlFeb",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(febData);
+
+      var options = {
+                  title: 'Tickets For Febuary',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_feb'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawJan);
+      
+    function drawJan() {
+      var janData = $.ajax({
+          url: "http://192.168.223.58:5555/BlJan",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(janData);
+
+      var options = {
+          				title: 'Tickets For January',
+          				vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+      			};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_jan'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  
+
+</head>
+  <body>
+	<form> 
+    <input type=button 
+      value="Reports Home"
+      onClick="self.location='../'">
+    </form>
+    <H1>Benbria OPS Monthly Report</H1>
+    <p>
+		<H2>November</H2>
+	<ul>
+		<li>Walgreens - Request for iPad setup from Verizon. Informed Verizon that decision is to wait for Kiosk stand before setup
+		<li>A&W - defect with Toushay interaction and failure of email reporting app detected
+		<li>BeaverTail - BL release broke French language and customer sent many missing translations post fix
+		<li>CCA and TESS delivered
+		<li>A&W - Problems with French on Kiosk reported
+		<li>HMAC delivered and reviewed. Training last week of November
+		<li>Universal - Delivered, and changes made, training to follow
+		<li>CPSJ - Event, guest and Team configured, scheduling training for early Dec, and review last week of November
+	</ul>
+		<H2>October</H2>
+	<ul>
+		<li>A&W - Internal redirect from www. site caused calls to Benbria, and email routing issues due to configuration combined with a duplicate account
+		<li>Renaissance and Interstate - Password reset and configuration questions
+		<li>Framboy - Further issue with abbreviated loop information prior to new release
+		<li>Subway - Kiosk issue with not caching or data transfer from scoreboard reported, information provided to customber from Toushay
+	</ul>
+		<H2>September</H2>
+	<ul>
+		<li>A&W - Customer reported QR code not working in French, cannot reproduce locally and requested more information
+		<li>A&W - Issues with coordination of iPod, iPad setup before corporate enables locations generating support calls
+		<li>A&W - reporting multiple issues with Toushay, wifi, email, also reporting issues with loops not routing correctly
+		<li>Hilton - Archiving questions reported from change in process
+		<li>All Customers - EC2 down monring of Friday Sept. 13
+		<li>Archiving raised issues with reporting. Fix is scheduled for week of Oct. 7 and workaround provided until then
+	</ul>
+		<H2>August</H2>
+	<ul>
+		<li>FarmBoy - could not recieve notifications post early Aug release due to their customized email templates
+		<li>NCI - HIE Grapevine request for User and LaQuinta request for Loop Site and account information
+		<li>NCI - Fairfield employee group request and Amarillo account changes
+		<li>Concord setup for SMS and Settlers ridge not receiving account creation notification, cannot reporduce
+		<li>BeaverTails loop mobile access can't distinguish Happy/Sad information
+		<li>A&W locations creation progressing throughout month
+	</ul>
+		<H2>July</H2>
+	<ul>
+		<li>BeaverTails - reported issue with translation bug 2 days after dev fix. Error observed before fix implemented
+		<li>FarmBoy - Issues with Duplicate email submissions and lost emails due to network. Development looking at Server side solutions
+		<li>A&W - Timezone issue discovered with rollout to Central timezone locations, fix deployed
+		<li>Demo Server - Problems reported twice in 1 week
+		<li>A&W - Continued expansion of their franchises
+		<li>NCI - Continued expansion for their Loop rollouts
+		
+	</ul>
+		<H2>June</H2>
+	<ul>
+		<li>FarmBoy - heavy activity due to service launch on week of June 10
+		<li>A&W - rollout to 30+ additional locations underway in June
+		<li>NewCrestImage - require name change and notification of change sent to Admins
+		<li>FarmBoy - reporting browser/OS compatibility issues that require our support from the software side
+		<li>A&W - discovered issue with Timezone setup for Western provinces. July 2 release to fix issue
+		<li>Lucaya - duplicate reporting seen possibly due to double submits. Implementing further checks on top of current implmentation to avoid this behaviour
+	</ul>
+                <H2>May</H2>
+        <ul>
+                <li>Grand Lucayan - Feature requests outstanding for their Loop delivery
+                <li>A&W - Kiosk (iPad) was repaired and re-registered. Toushay password reset to support effort
+		<li>Doubletree - Issue with responding to a loop. Monitoring to determine if it's related to network connectivity
+    	</ul>
+      		
+    </p>
+
+    <table border="1" bordercolor="#ffffff" style="background-color:#ffffff" 
+		   width="100%" cellpadding="0" cellspacing="1">
+    <!--Div that will hold the bar chart-->
+    <tr><td><div id="chart_cust_nov" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="nov_bl_cat" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_oct" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="oct_bl_cat" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_sep" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="sep_bl_cat" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_aug" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="aug_bl_cat" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_july" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="july_bl_cat" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_june" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_may" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_apr" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_mar" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_feb" style="width: 900px; height: 700px;"></div></td></tr>
+    <tr><td><div id="chart_cust_jan" style="width: 900px; height: 700px;"></div></td>
+    </tr>
+    </table>
+  </body>
+</html>
