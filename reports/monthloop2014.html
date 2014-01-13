@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" charset="utf-8"/>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawJan);
+
+    function drawJan() {
+      var janData = $.ajax({
+          url: "http://192.168.223.58:5555/BlJan2014",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(janData);
+
+      var options = {
+                  title: 'Tickets For January',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_jan'));
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+     // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawWeek);
+
+    function drawWeek() {
+      var weekData = $.ajax({
+          url: "http://192.168.223.58:5555/BlCatJan2014",
+          dataType:"json",
+          async: false
+          }).responseText;
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(weekData);
+
+      var options = {
+                  title: 'January Loop Categories',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('jan_bl_cat'));
+      chart.draw(data, options);
+    }
+  </script>
+    
+
+</head>
+  <body>
+	<form> 
+    <input type=button 
+      value="Reports Home"
+      onClick="self.location='../'">
+    </form>
+    <H1>Benbria OPS Monthly Report</H1>
+    <p>
+    <H2>January</H2>
+        <ul>
+                <li>Grand Lucayan - Feature requests outstanding for their Loop delivery
+                <li>A&W - Kiosk (iPad) was repaired and re-registered. Toushay password reset to support effort
+		<li>Doubletree - Issue with responding to a loop. Monitoring to determine if it's related to network connectivity
+    	</ul>
+      		
+    </p>
+
+    <table border="1" bordercolor="#ffffff" style="background-color:#ffffff" 
+		   width="100%" cellpadding="0" cellspacing="1">
+    <!--Div that will hold the bar chart-->
+    <tr><td><div id="chart_cust_jan" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="jan_bl_cat" style="width: 900px; height: 700px;"></div></td></tr>
+    </tr>
+    </table>
+  </body>
+</html>
