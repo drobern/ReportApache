@@ -468,6 +468,63 @@
       chart.draw(data, options);
     }
   </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawMonth);
+      
+    function drawMonth() {
+      var monthData = $.ajax({
+          url: "http://192.168.223.58:5555/CustSep2014",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(monthData);
+
+      var options = {
+                  title: 'Tickets For September',
+                  vAxis: {title: 'Customers',  titleTextStyle: {color: 'red'}}
+            };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.BarChart(document.getElementById('chart_cust_sep'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawMonth);
+      
+    function drawMonth() {
+      var monthData = $.ajax({
+          url: "http://192.168.223.58:5555/CatSep2014",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(monthData);
+
+      var options = {
+                  title: 'Category September Tickets',
+      };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_cat_sep'));
+      chart.draw(data, options);
+    }
+  </script>
   
 </head>
   <body>
@@ -483,6 +540,8 @@
 		   width="100%" cellpadding="0" cellspacing="1">
     <!--Div that will hold the bar chart-->
     
+    <tr><td><div id="chart_cust_sep" style="width: 900px; height: 700px;"></div></td>
+    <td><div id="chart_cat_sep" style="width: 1100px; height: 700px;"></div></td></tr>
     <tr><td><div id="chart_cust_aug" style="width: 900px; height: 700px;"></div></td>
     <td><div id="chart_cat_aug" style="width: 1100px; height: 700px;"></div></td></tr>
     <tr><td><div id="chart_cust_july" style="width: 900px; height: 700px;"></div></td>
